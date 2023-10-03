@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="utf-8" />
+    <title>My first three.js app</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="video-container">
+        <video autoplay muted loop id="background-video" class="fullscreen-video">
+            <source src="welcome.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop id="second-video" class="fullscreen-video hidden">
+            <source src="welcomeTwo.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop id="third-video" class="fullscreen-video hidden">
+            <source src="welcomeThree.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop id="fourth-video" class="fullscreen-video hidden">
+            <source src="welcomeFour.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop id="fifth-video" class="fullscreen-video hidden">
+            <source src="welcomefive.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop id="sixth-video" class="fullscreen-video hidden">
+            <source src="welcomesixth.mp4" type="video/mp4">
+        </video>
+        <header class="site-header">
+            <div class="company-name">IMMOBILIEN Invest</div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#" class="special-link">About us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#" class="special-link">Project</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <canvas></canvas>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
