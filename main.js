@@ -10,22 +10,24 @@ const camera = new THREE.PerspectiveCamera(
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setClearColor(0x000000, 0); 
+renderer.setClearColor(0x000000, 0);
 document.body.appendChild(renderer.domElement);
 
-const originalCubeSize = 1.5;
-const cubeSize = originalCubeSize;
+const torusRadius = 1; 
+const tubeRadius = 0.3; 
+const torusSegments = 16;
+const tubeSegments = 100;
 
-const geometry = new THREE.BoxGeometry(cubeSize, cubeSize, cubeSize);
-const mainMaterial = new THREE.MeshStandardMaterial({ color: 0x800080 });
-const cube = new THREE.Mesh(geometry, mainMaterial);
-scene.add(cube);
+const geometry = new THREE.TorusGeometry(torusRadius, tubeRadius, torusSegments, tubeSegments);
+const orangeMaterial = new THREE.MeshStandardMaterial({ color: 0xFFA500 }); 
+const torus = new THREE.Mesh(geometry, orangeMaterial);
+scene.add(torus);
 
 camera.position.z = 5;
 
-cube.position.x = 12; 
+torus.position.x = 12;
 camera.position.y = -4.1;
-cube.position.z = -5;
+torus.position.z = -5;
 
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
 scene.add(ambientLight);
@@ -59,8 +61,8 @@ document.addEventListener('mousemove', (event) => {
       y: event.clientY - previousMousePosition.y
     };
 
-    cube.rotation.x += deltaMove.y * 0.005;
-    cube.rotation.y += deltaMove.x * 0.005;
+    torus.rotation.x += deltaMove.y * 0.005;
+    torus.rotation.y += deltaMove.x * 0.005;
 
     previousMousePosition = {
       x: event.clientX,
@@ -72,8 +74,8 @@ document.addEventListener('mousemove', (event) => {
 function animate() {
   requestAnimationFrame(animate);
 
-  cube.rotation.x += 0.005;
-  cube.rotation.y += 0.005;
+  torus.rotation.x += 0.005;
+  torus.rotation.y += 0.005;
 
   renderer.render(scene, camera);
 }
@@ -81,7 +83,12 @@ function animate() {
 animate();
 
 
+
+
 // dsadsadsadasdasdasdasdas
+
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
   let video1 = document.getElementById("background-video");
